@@ -44,7 +44,7 @@ function Navbar() {
                 <a className="nav-link" href="/annual-appeal">Annual Appeal</a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/store">Alumni Store</a>
+                <a className="nav-link" href="https://the-harvard-advocate.myshopify.com/">Alumni Store</a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" href="/contact">Contact</a>
