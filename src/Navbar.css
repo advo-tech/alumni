@@ -1,0 +1,147 @@
+.navbar {
+  background-color: white;
+  color: black;
+  border-bottom: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  height: 10vh;
+  padding: 1rem 1rem;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+
+.getItTogether {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: auto;
+}
+
+.leftColumn,
+.rightColumn {
+  display: flex;
+  align-items: center;
+}
+
+.leftColumn {
+  justify-content: left;
+}
+
+.rightColumn {
+  justify-content: right;
+}
+
+.navbar-logo-image {
+  height: 50px;
+  margin-right: 1rem;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: auto;
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navbar-nav {
+  margin-top: 1rem;
+  display: none;
+}
+
+.nav-item {
+  margin-right: 1rem;
+  font-color: black;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+ul {
+  list-style-type: none;
+}
+
+@media (max-width: 767.98px) {
+  .navbar {
+    grid-template-columns: auto auto;
+  }
+
+  .navbar-brand {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  .navbar-nav {
+    flex-direction: column;
+    margin-top: 1rem;
+    display: none;
+  }
+
+  .nav-link {
+    padding: 0.5rem 1rem;
+    border-top: 1px solid #eaeaea;
+  }
+
+  .navbar-collapse-show {
+    display: flex !important;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+    height: auto;
+    width: 100%;
+    border-bottom: 1px solid black;
+  }
+
+  .navbar-toggler {
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+
+  .navbar-collapse-show .nav-item {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .navbar-toggler > .line {
+    background-color: #292929;
+    height: 2px;
+    display: block;
+    width: 4vw;
+  }
+
+  .navbar-toggler > .line + .line {
+    margin-top: 3px;
+  }
+
+  .navbar-toggler::before {
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.3s
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-toggler {
+    visibility: hidden;
+  }
+
+  .navbar-nav {
+    display: flex !important;
+  }
+}
