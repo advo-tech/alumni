@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./Home";
 import CapitalCampaign from "./CapitalCampaign";
 import AnnualAppeal from "./AnnualAppeal";
-import Shop from "./Shop";
 import Navbar from './Navbar';
 import Contact from './Contact';
 
