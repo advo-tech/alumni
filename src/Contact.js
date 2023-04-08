@@ -1,4 +1,4 @@
-import illustration from './assets/illustration.jpeg';
+import frank from './assets/frank.png';
 import Frame from './Frame.js'
 
 function Contact() {
@@ -15,8 +15,8 @@ function Contact() {
           </>
         }
 
-        illustration={illustration}
-        illustrationCaption="Illustration by Tosca Langbert '24"
+        illustration={frank}
+        illustrationCaption="Illustration by Frank Liu '26"
         button={"Sign up for our mailing list"}
         buttonLink={"https://dashboard.mailerlite.com/forms/324641/84912909975553380/share"}
       />

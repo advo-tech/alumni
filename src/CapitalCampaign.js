@@ -1,4 +1,4 @@
-import illustration from './assets/illustration.jpeg';
+import tosca from './assets/tosca.jpg';
 import Frame from './Frame.js'
 
 
@@ -29,10 +29,10 @@ function CapitalCampaign() {
           </>
         }
 
-        illustration={illustration}
+        illustration={tosca}
         illustrationCaption="Illustration by Tosca Langbert '24"
         button = {"Contribute to the Capital Campaign"}
-        buttonLink = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        buttonLink = "https://donate.stripe.com/8wM2bRa5Wfma1uE5kl"
 
       />
   );
