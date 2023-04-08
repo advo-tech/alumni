@@ -18,7 +18,7 @@ function Contact() {
         illustration={illustration}
         illustrationCaption="Illustration by Tosca Langbert '24"
         button={"Sign up for our mailing list"}
-        buttonLink={"https://www.google.com"}
+        buttonLink={"https://dashboard.mailerlite.com/forms/324641/84912909975553380/share"}
       />
   );
 }
