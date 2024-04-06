@@ -1,6 +1,8 @@
 import illustration from './assets/illustration.jpeg';
 import Frame from './Frame.js';
 
+import React, { useState } from 'react';
+
 import { Grid, Skeleton, Button, Group, Container, Text, SimpleGrid, rem, Checkbox } from '@mantine/core';
 
 // const child = <Skeleton height={200} radius="md"  animate={false} />;
@@ -8,11 +10,74 @@ import { Grid, Skeleton, Button, Group, Container, Text, SimpleGrid, rem, Checkb
 const PRIMARY_COL_HEIGHT = rem(680);
 
 function CapitalCampaign() {
+  const [clicked20, setClicked20] = useState(false);
+  const [clicked50, setClicked50] = useState(false);
+  const [clicked100, setClicked100] = useState(false);
+  const [clicked250, setClicked250] = useState(false);
+  const [clicked500, setClicked500] = useState(false);
+  const [clickedOther, setClickedOther] = useState(false);
+  const [recurAnnual, setRecurAnnual] = useState(false);
+
+  const handleDonation = (amount) => {
+    setClickedOther(false);
+    setClicked20(false);
+    setClicked50(false);
+    setClicked100(false);
+    setClicked250(false);
+    setClicked500(false);
+
+    // Set the clicked button state
+    switch (amount) {
+      case 0:
+        setClickedOther(true);
+        break;
+      case 20:
+        setClicked20(true);
+        break;
+      case 50:
+        setClicked50(true);
+        break;
+      case 100:
+        setClicked100(true);
+        break;
+      case 250:
+        setClicked250(true);
+        break;
+      case 500:
+        setClicked500(true);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleCheckboxChange = () => {
+    setRecurAnnual(!recurAnnual);
+  };
+
+  const handleDonateNow = () => {
+    let url = 'https://donate.stripe.com/6oE00W6lc7xQeVW144';
+    if (clicked20) {
+      url = recurAnnual ? 'https://buy.stripe.com/fZe7to10S7xQ7tu5kx' : 'https://buy.stripe.com/9AQ150cJA4lE1567sE';
+    } else if (clicked50) {
+      url = recurAnnual ? 'https://buy.stripe.com/6oE00WgZQaK2g00cMU' : 'https://buy.stripe.com/eVacNIbFwaK2aFG7sw';
+    } else if (clicked100) {
+      url = recurAnnual ? 'https://buy.stripe.com/8wMcNI390f0ibJK009' : 'https://buy.stripe.com/5kAdRM3909FYdRS3ch';
+    } else if (clicked250) {
+      url = recurAnnual ? 'https://buy.stripe.com/bIY9Bw8tk3hAg008wH' : 'https://buy.stripe.com/3cs29424W7xQ29a3ci';
+    } else if (clicked500) {
+      url = recurAnnual ? 'https://buy.stripe.com/7sI5lgaBsg4maFG6oy' : 'https://buy.stripe.com/7sIdRM8tk19saFGbIP';
+    } 
+  
+    if (url) {
+      window.open(url, '_blank');
+    }
+
+  };
 
 const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 4 - var(--mantine-spacing-md) / 2)`;
 
   return (
-
 
     <Container size="xl" my="lg">
       <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="xl">
@@ -33,20 +98,24 @@ const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 4 - var(--mantine-spa
         // justify="space-between" 
         gap="sm">
 
-     <Button variant="default" >20</Button>
-       <Button variant="default">50</Button>
-       <Button variant="default">100</Button>
+      <Button variant={clicked20 ? "filled" : "default"} onClick={() => handleDonation(20)}>20</Button>
+      <Button variant={clicked50 ? "filled" : "default"} onClick={() => handleDonation(50)}>50</Button>
+      <Button variant={clicked100 ? "filled" : "default"} onClick={() => handleDonation(100)}>100</Button>
 
-     <Button variant="default">250</Button>
-       <Button variant="default">500</Button>
+     <Button variant={clicked250 ? "filled" : "default"} onClick={() => handleDonation(250)}>250</Button>
+       <Button variant={clicked500 ? "filled" : "default"} onClick={() => handleDonation(500)}>500</Button>
        {/* <Button variant="default">1000</Button> */}
-      <Button variant="default">Other</Button>
+      <Button variant={clickedOther ? "filled" : "default"} onClick={() => handleDonation(0)}>Other</Button>
      </Group><br></br>
 
      <Checkbox
-      // defaultChecked
+      checked={recurAnnual}
+      onChange={handleCheckboxChange}
       label="Make my donation annual"
     />
+    <Group gap="sm"></Group>
+
+  <Button onClick={handleDonateNow}>Donate Now</Button>
 
      </Skeleton>
 
