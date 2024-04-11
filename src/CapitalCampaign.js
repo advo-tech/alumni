@@ -77,22 +77,32 @@ function CapitalCampaign() {
 
 const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 4 - var(--mantine-spacing-md) / 2)`;
 
-  return (
+return (
 
-    <Container size="xl" my="lg">
-      <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="xl">
-        <Skeleton visible={false} height={PRIMARY_COL_HEIGHT} radius="md" animate={false}>
-        <h1>Donate etc</h1>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis nisl id lorem cursus commodo. Pellentesque sed elementum enim, nec elementum sem. Fusce fermentum consequat nunc a imperdiet. Curabitur eu mattis magna. Vestibulum finibus eget urna id ullamcorper.
-        <br></br>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis nisl id lorem cursus commodo. Pellentesque sed elementum enim, nec elementum sem. Fusce fermentum consequat nunc a imperdiet. Curabitur eu mattis magna. Vestibulum finibus eget urna id ullamcorper.
+  <Container size="xl" my="lg">
+    <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="xl">
+      <Skeleton visible={false} height={PRIMARY_COL_HEIGHT} radius="md" animate={false}>
+      
+      <h1>Donate to the Capital Campaign</h1>
+        <p>Maren will write a paragraph here </p>
+      <br></br>
+      <strong>Note about the MERCH PACKAGES:</strong> The Athena, Penelope, and Circe tiers each contain a Merch Package. The Merch Package consists of the <a href="https://theharvardadvocate.com/current" style={{textDecoration: 'underline', color: 'blue'}}>current issue</a>, <a href="https://shop.theharvardadvocate.com/products/unisex-hoodie-march-1968?variant=40148551598135" style={{textDecoration: 'underline', color: 'blue'}}>a sweater</a>, <a href="https://shop.theharvardadvocate.com/products/peg-logo-sticker" style={{textDecoration: 'underline', color: 'blue'}}>a hand-designed sticker</a>, and <a href="https://shop.theharvardadvocate.com/products/1866-corduroy-cap-embroidered?variant=40135284031543" style={{textDecoration: 'underline', color: 'blue'}}>a hat</a>.
+      <p>
+      Donations of every tier will come with your name printed in the next issue and The Advocate's eternal gratutude.
+      </p>
+      <br></br>
+      <h2>Your donation will help The Harvard Advocate:</h2>
+      <li> Install swipe access to 21 South Street</li> 
+      <li> Retile our kitchen</li>
+      <li> Print our issues and distribute them</li> 
+     <li> Digitize back issues + move to offsite storage</li> 
+     <li> Hire a regular cleaning crew</li> 
+     <li> Hold events in 21 South Street</li> 
+     <li>  Start a Financial Aid program and Increase accessibility to the Advocate</li> 
+     <li> Fund board bonding events</li> 
+     <li> Fund the blog (literary + arts events in Boston, concert tickets, etc.)</li> 
 
-        <br></br>
-        <br></br>
-        <h2>Make a one-time donation here.</h2>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis nisl id lorem cursus commodo. Pellentesque sed elementum enim, nec elementum sem. Fusce fermentum consequat nunc a imperdiet. Curabitur eu mattis magna. Vestibulum finibus eget urna id ullamcorper.
-        <br></br>
-
+      <br></br>
 
         <Group 
         // justify="space-between" 
@@ -120,25 +130,21 @@ const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 4 - var(--mantine-spa
      </Skeleton>
 
         <Grid gutter="md">
-          <Grid.Col>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
-          </Grid.Col>
 
-          {/* MIDAS */}
+          {/* ATHENA */}
 
           <Grid.Col span={6}>
             <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
           </Grid.Col>
           <Grid.Col span={6}>
             
-            <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
-                <Text align="right" justify="right">
-
-                    In the Midas tier, you receive:<br></br>
-                    Shoutout<br></br>
-                    Loren<br></br>
-                    Ipsum<br></br>
-                    
+          <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
+          <Text align="right" justify="right">
+                <h3>Athena ($10,000+)</h3>
+                  <li>Name engraved on plaque in building</li>
+                  <li>150th Anniversary Poster signed by all 2023-24 Advocate members</li>
+                  <li>Up to 3 back issues or posters</li>
+                  <li>Merch Package</li>
                     </Text> 
             </Skeleton>
           </Grid.Col>
@@ -147,37 +153,61 @@ const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 4 - var(--mantine-spa
 
           {/* PENELOPE */}
 
-
-
           <Grid.Col span={6}>
+            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
+          </Grid.Col>
+          <Grid.Col span={6}>
+            
+            <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
+                <Text align="right" justify="right">
+                <h3>Penelope ($5,000+)</h3>
+                <li>150th Anniversary Poster signed by all 2023-24 Advocate members</li>
+                  <li>Up to 3 back issues or posters</li>
+                  <li>Merch Package</li>
+                    </Text> 
+            </Skeleton>
+          </Grid.Col>
+          
+
+
+
+     {/* CIRCE */}
+     <Grid.Col span={6}>
             <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
           </Grid.Col>
 
           <Grid.Col span={6}>
 
           <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
-                <Text align="right" justify="right">
-
-                    In the Penelope tier, you receive:<br></br>
-                    Shoutout<br></br>
-                    Loren<br></br>
-                    Ipsum<br></br>
-                    
+          <Text align="right" justify="right">
+                <h3>Circe ($1,000 - $5,000)</h3>
+                  <li>Up to 3 back issues or posters</li>
+                  <li>Handwritten thank-you note</li>
+                  <li>Merch Package</li>
                     </Text> 
             </Skeleton>
 
             </Grid.Col>
 
+     {/* NAUSICAA */}
 
 
-          {/* DRYAD */}
 
-          <Grid.Col span={6}>
+     <Grid.Col span={6}>
             <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
           </Grid.Col>
+
           <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
-          </Grid.Col>
+
+          <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
+          <Text align="right" justify="right">
+                <h3>Nausicaa ($50 - $1,000)</h3>
+                <li><a href="https://shop.theharvardadvocate.com/products/peg-logo-sticker" style={{textDecoration: 'underline', color: 'blue'}}>A hand-designed sticker </a></li>
+                <li>The current issue</li>
+                    </Text> 
+            </Skeleton>
+
+            </Grid.Col>
         </Grid>
       </SimpleGrid>
     </Container>
@@ -282,3 +312,4 @@ const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 4 - var(--mantine-spa
 }
 
 export default CapitalCampaign;
+
