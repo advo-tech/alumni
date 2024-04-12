@@ -1,11 +1,15 @@
 import illustration from './assets/illustration.jpeg';
 import Frame from './Frame.js';
 
+import nausicaa from './assets/nausicaa.PNG';
+import circe from './assets/circe.PNG';
+import penelope from './assets/penelope.PNG';
+import athena from './assets/athena.PNG';
+
 import React, { useState } from 'react';
+import { TextInput } from '@mantine/core';
+import { Grid, Skeleton, Button, Group, Container, Text, Image, SimpleGrid, rem, Checkbox } from '@mantine/core';
 
-import { Grid, Skeleton, Button, Group, Container, Text, SimpleGrid, rem, Checkbox } from '@mantine/core';
-
-// const child = <Skeleton height={200} radius="md"  animate={false} />;
 
 const PRIMARY_COL_HEIGHT = rem(680);
 
@@ -17,6 +21,8 @@ function CapitalCampaign() {
   const [clicked500, setClicked500] = useState(false);
   const [clickedOther, setClickedOther] = useState(false);
   const [recurAnnual, setRecurAnnual] = useState(false);
+
+  // const [donationDesignation, setDonationDesignation] = useState('');
 
   const handleDonation = (amount) => {
     setClickedOther(false);
@@ -55,6 +61,10 @@ function CapitalCampaign() {
     setRecurAnnual(!recurAnnual);
   };
 
+  // const handleDesignationChange = (event) => {
+  //   setDonationDesignation(event.target.value);
+  // };
+  
   const handleDonateNow = () => {
     let url = 'https://donate.stripe.com/6oE00W6lc7xQeVW144';
     if (clicked20) {
@@ -68,6 +78,10 @@ function CapitalCampaign() {
     } else if (clicked500) {
       url = recurAnnual ? 'https://buy.stripe.com/7sI5lgaBsg4maFG6oy' : 'https://buy.stripe.com/7sIdRM8tk19saFGbIP';
     } 
+
+    // const handleDesignationChange = (event) => {
+    //   setDonationDesignation(event.target.value);
+    // };
   
     if (url) {
       window.open(url, '_blank');
@@ -118,12 +132,20 @@ return (
       <Button variant={clickedOther ? "filled" : "default"} onClick={() => handleDonation(0)}>Other</Button>
      </Group><br></br>
 
-     <Checkbox
+{/* <TextInput
+  placeholder="What would you like your donation to go towards? (optional)"
+  value={donationDesignation}
+  onChange={handleDesignationChange}
+/>
+<br></br> */}
+
+     {/* <Checkbox
       checked={recurAnnual}
       onChange={handleCheckboxChange}
       label="Make my donation annual"
     />
-    <Group gap="sm"></Group>
+      <br></br>
+    <Group gap="sm"></Group> */}
 
   <Button onClick={handleDonateNow}>Donate Now</Button>
 
@@ -133,10 +155,15 @@ return (
 
           {/* ATHENA */}
 
-          <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
-          </Grid.Col>
-          <Grid.Col span={6}>
+
+          <Grid.Col span={3.5}>
+  <img
+    src={athena}
+    alt="athena tier illustration: sketch of bronco"
+    style={{ width: '100%', borderRadius: 'md' }} 
+  />
+</Grid.Col>
+          <Grid.Col span={8.5}>
             
           <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
           <Text align="right" justify="right">
@@ -148,15 +175,18 @@ return (
                     </Text> 
             </Skeleton>
           </Grid.Col>
-          
 
 
           {/* PENELOPE */}
 
-          <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
+          <Grid.Col span={3.5}>
+            <img
+              src={penelope} 
+              alt="penelope tier illustration: sketch of bronco"
+              style={{ width: '100%', borderRadius: 'md' }} 
+            />
           </Grid.Col>
-          <Grid.Col span={6}>
+          <Grid.Col span={8.5}>
             
             <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
                 <Text align="right" justify="right">
@@ -172,11 +202,15 @@ return (
 
 
      {/* CIRCE */}
-     <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
+     <Grid.Col span={3.5}>
+            <img
+              src={circe} 
+              alt="circe tier illustration: sketch of bronco"
+              style={{ width: '100%', borderRadius: 'md' }} 
+            />
           </Grid.Col>
 
-          <Grid.Col span={6}>
+          <Grid.Col span={8.5}>
 
           <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
           <Text align="right" justify="right">
@@ -193,11 +227,23 @@ return (
 
 
 
-     <Grid.Col span={6}>
-            <Skeleton height={SECONDARY_COL_HEIGHT} radius="md" animate={false} />
-          </Grid.Col>
+     <Grid.Col span={3.5} style={{ position: 'relative' }}>
+  <img
+    src={nausicaa} 
+    alt="nausicaa tier illustration: sketch of bronco"
+    style={{ width: '100%', borderRadius: 'md' }} // You'll need to ensure 'md' is converted to a valid CSS unit
+  />
+  <div style={{ 
+    textAlign: 'center', // Centers the caption text
+    marginTop: '8px', // Gives some space between the image and the caption
+    fontSize: '0.75rem', // Adjust the font size as needed
+    color: '#333', // The color of the caption text
+  }}>
+    Illustrations by Jack Towers '25
+  </div>
+</Grid.Col>
 
-          <Grid.Col span={6}>
+          <Grid.Col span={8.5}>
 
           <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
           <Text align="right" justify="right">
@@ -206,8 +252,8 @@ return (
                 <li>The current issue</li>
                     </Text> 
             </Skeleton>
-
             </Grid.Col>
+            
         </Grid>
       </SimpleGrid>
     </Container>
