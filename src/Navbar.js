@@ -37,9 +37,12 @@ function Navbar() {
           { !mobile ?
           <div className={`navbar-collapse${showMenu ? "-show" : ""}`}>
             <ul className={`navbar-nav${showMenu ? "-show" : ""}`}>
-              <li className="nav-item">
+            <li className="nav-item">
                 <a className="nav-link" href="/capital-campaign">Capital Campaign</a>
               </li>
+              {/* <li className="nav-item">
+                <a className="nav-link" href="/capital-campaign-old">Capital Campaign Old</a>
+              </li> */}
               <li className="nav-item">
                 <a className="nav-link" href="/annual-appeal">Annual Appeal</a>
               </li>
