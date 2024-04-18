@@ -8,7 +8,7 @@ import athena from './assets/athena.PNG';
 
 import React, { useState } from 'react';
 import { TextInput } from '@mantine/core';
-import { Grid, Skeleton, Button, Group, Container, Text, Image, SimpleGrid, rem, Checkbox } from '@mantine/core';
+import { Grid, Skeleton, Button, Checkbox, Group, Container, Text, Image, Space, RadioGroup, Radio, SimpleGrid, rem } from '@mantine/core';
 
 
 const PRIMARY_COL_HEIGHT = rem(680);
@@ -93,17 +93,109 @@ const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 4 - var(--mantine-spa
 
 return (
 
+
   <Container size="xl" my="lg">
     <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="xl">
+
       <Skeleton visible={false} height={PRIMARY_COL_HEIGHT} radius="md" animate={false}>
       
       <h1>Donate to the Capital Campaign</h1>
-        <p>Maren will write a paragraph here </p>
+        <p>Each semester, The Harvard Advocate raises just enough advertising revenue to cover regular operations, but print advertising is a dying art form. With your support, The Harvard Advocate will be able to continue printing and distributing our semesterly magazine; digitize and archive our 150+ years of back issues; implement essential building upkeep and renovations; fund our financial aid program; and enable the continued vitality of the student organization you know and love.
+<br></br> <br></br>As an alum, you can donate to specific funds in order to guarantee that your money will go to a cause close to your heart (who doesn’t adore the kitchen floor?!).
+<br></br>Thank you, as always, for your generous and unfailing support.
+<br></br><br></br>Dulce Est Periculum
+
+ </p>
       <br></br>
-      <strong>Note about the MERCH PACKAGES:</strong> The Athena, Penelope, and Circe tiers each contain a Merch Package. The Merch Package consists of the <a href="https://theharvardadvocate.com/current" style={{textDecoration: 'underline', color: 'blue'}}>current issue</a>, <a href="https://shop.theharvardadvocate.com/products/unisex-hoodie-march-1968?variant=40148551598135" style={{textDecoration: 'underline', color: 'blue'}}>a sweater</a>, <a href="https://shop.theharvardadvocate.com/products/peg-logo-sticker" style={{textDecoration: 'underline', color: 'blue'}}>a hand-designed sticker</a>, and <a href="https://shop.theharvardadvocate.com/products/1866-corduroy-cap-embroidered?variant=40135284031543" style={{textDecoration: 'underline', color: 'blue'}}>a hat</a>.
-      <p>
-      Donations of every tier will come with your name printed in the next issue and The Advocate's eternal gratutude.
-      </p>
+
+
+      <Grid>
+        <Grid.Col span={12}>
+        <Text>To donate, choose a tier:</Text>
+
+
+        <Radio.Group
+      name="favoriteFramework"
+      color="yellow"
+      // label="Choose a donation tier."
+      // variant="vertical"
+      // withAsterisk
+    >
+
+        <Group mt="xs" gap="lg">
+        <Radio value="athena" label="Athena" />
+        <Radio value="penelope" label="Penelope" />
+        <Radio value="circe" label="Circe" />
+        <Radio value="nausicaa" label="Nausicaa" />
+
+      </Group>
+      
+      <br></br>
+      <Text>Or, choose a donation amount:</Text>
+      <Text fz="xs" color="grey">Donations above $50 are automatically added to the Nausicaa tier.</Text>
+
+      <Group mt="xs" gap="lg">
+        <Radio value="20" label="$20" />
+        <Radio value="50" label="$50" />
+        <Radio value="100" label="$100" />
+        <Radio value="250" label="$250" />
+        <Radio value="500" label="$500" />
+        <Radio value="other" label="Other" />
+
+
+      </Group>
+      
+    </Radio.Group>
+
+        </Grid.Col>
+
+
+
+      </Grid>
+
+
+      
+{/*   
+      
+
+      <Grid gutter>
+        <Grid.Col span={2}> 
+        <Button fullWidth={true} variant={clicked20 ? "filled" : "default"} onClick={() => handleDonation(20)}>20</Button>
+
+        
+        </Grid.Col>
+        <Grid.Col span={2}> 
+        <Button  fullWidth={true} variant={clicked50 ? "filled" : "default"} onClick={() => handleDonation(50)}>50</Button>
+
+        
+        </Grid.Col>
+        <Grid.Col span={2}> 
+        <Button  fullWidth={true} variant={clicked100 ? "filled" : "default"} onClick={() => handleDonation(100)}>100</Button>
+
+        
+        </Grid.Col>
+        <Grid.Col span={2}> 
+        <Button  fullWidth={true} variant={clicked250 ? "filled" : "default"} onClick={() => handleDonation(250)}>250</Button>
+
+        
+        </Grid.Col>
+        <Grid.Col span={2}> 
+        <Button  fullWidth={true} variant={clicked500 ? "filled" : "default"} onClick={() => handleDonation(500)}>500</Button>
+
+        
+        </Grid.Col>
+        <Grid.Col span={2}> 
+        <Button  fullWidth={true} variant={clickedOther ? "filled" : "default"} onClick={() => handleDonation(0)}>Other</Button>
+
+        
+        </Grid.Col>
+      </Grid> */}
+
+
+    <br></br>
+
+  <Button fullWidth={true} onClick={handleDonateNow}>Donate Now</Button>
+
       <br></br>
       <h2>Your donation will help The Harvard Advocate:</h2>
       <li> Install swipe access to 21 South Street</li> 
@@ -116,38 +208,24 @@ return (
      <li> Fund board bonding events</li> 
      <li> Fund the blog (literary + arts events in Boston, concert tickets, etc.)</li> 
 
+
       <br></br>
 
+      
+      <strong>Note about the MERCH PACKAGES:</strong> The Athena, Penelope, and Circe tiers each contain a Merch Package. T
+      he Merch Package consists of the <a href="https://theharvardadvocate.com/current" style={{textDecoration: 'underline', color: 'blue'}}>current issue</a>, 
+      <a href="https://shop.theharvardadvocate.com/products/unisex-hoodie-march-1968?variant=40148551598135" style={{textDecoration: 'underline', color: 'blue'}}>
+        a sweater</a>, <a href="https://shop.theharvardadvocate.com/products/peg-logo-sticker" style={{textDecoration: 'underline', color: 'blue'}}>a hand-designed 
+        sticker</a>, and <a href="https://shop.theharvardadvocate.com/products/1866-corduroy-cap-embroidered?variant=40135284031543" style={{textDecoration: 'underline', color: 'blue'}}>a hat</a>.
+      {/* <p> */}
+      &nbsp;Donations of every tier will come with your name printed in the next issue and The Advocate's eternal gratutude.
+      {/* </p> */}
+{/* 
         <Group 
         // justify="space-between" 
-        gap="sm">
+        gap="sm"> */}
 
-      <Button variant={clicked20 ? "filled" : "default"} onClick={() => handleDonation(20)}>20</Button>
-      <Button variant={clicked50 ? "filled" : "default"} onClick={() => handleDonation(50)}>50</Button>
-      <Button variant={clicked100 ? "filled" : "default"} onClick={() => handleDonation(100)}>100</Button>
 
-     <Button variant={clicked250 ? "filled" : "default"} onClick={() => handleDonation(250)}>250</Button>
-       <Button variant={clicked500 ? "filled" : "default"} onClick={() => handleDonation(500)}>500</Button>
-       {/* <Button variant="default">1000</Button> */}
-      <Button variant={clickedOther ? "filled" : "default"} onClick={() => handleDonation(0)}>Other</Button>
-     </Group><br></br>
-
-{/* <TextInput
-  placeholder="What would you like your donation to go towards? (optional)"
-  value={donationDesignation}
-  onChange={handleDesignationChange}
-/>
-<br></br> */}
-
-     {/* <Checkbox
-      checked={recurAnnual}
-      onChange={handleCheckboxChange}
-      label="Make my donation annual"
-    />
-      <br></br>
-    <Group gap="sm"></Group> */}
-
-  <Button onClick={handleDonateNow}>Donate Now</Button>
 
      </Skeleton>
 
