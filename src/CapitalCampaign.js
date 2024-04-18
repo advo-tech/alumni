@@ -14,6 +14,11 @@ import { Grid, Skeleton, Button, Checkbox, Group, Container, Text, Image, Space,
 const PRIMARY_COL_HEIGHT = rem(680);
 
 function CapitalCampaign() {
+
+
+  const [value, setValue] = useState('react');
+
+
   const [clicked20, setClicked20] = useState(false);
   const [clicked50, setClicked50] = useState(false);
   const [clicked100, setClicked100] = useState(false);
@@ -66,18 +71,32 @@ function CapitalCampaign() {
   // };
   
   const handleDonateNow = () => {
+    console.log(value);
+
     let url = 'https://donate.stripe.com/6oE00W6lc7xQeVW144';
-    if (clicked20) {
+    if (value == '20') {
       url = recurAnnual ? 'https://buy.stripe.com/fZe7to10S7xQ7tu5kx' : 'https://buy.stripe.com/9AQ150cJA4lE1567sE';
-    } else if (clicked50) {
+    } else if (value == '50') {
       url = recurAnnual ? 'https://buy.stripe.com/6oE00WgZQaK2g00cMU' : 'https://buy.stripe.com/eVacNIbFwaK2aFG7sw';
-    } else if (clicked100) {
+    } else if (value == '100') {
       url = recurAnnual ? 'https://buy.stripe.com/8wMcNI390f0ibJK009' : 'https://buy.stripe.com/5kAdRM3909FYdRS3ch';
-    } else if (clicked250) {
+    } else if (value == '250') {
       url = recurAnnual ? 'https://buy.stripe.com/bIY9Bw8tk3hAg008wH' : 'https://buy.stripe.com/3cs29424W7xQ29a3ci';
-    } else if (clicked500) {
+    } else if (value == '500') {
       url = recurAnnual ? 'https://buy.stripe.com/7sI5lgaBsg4maFG6oy' : 'https://buy.stripe.com/7sIdRM8tk19saFGbIP';
     } 
+    else if (value == 'athena') {
+      url = recurAnnual ? 'https://buy.stripe.com/cN2eVQ7pg9FY7tu14j' : 'https://buy.stripe.com/cN2eVQ7pg9FY7tu14j';
+    }
+    else if (value == 'penelope') {
+      url = recurAnnual ? 'https://buy.stripe.com/cN2bJE5h819s6pqdQS' : 'https://buy.stripe.com/cN2bJE5h819s6pqdQS';
+    }
+    else if (value == 'circe') {
+      url = recurAnnual ? 'https://buy.stripe.com/6oE00WbFw7xQ8xy7sG' : 'https://buy.stripe.com/6oE00WbFw7xQ8xy7sG';
+    }
+    else if (value == 'nausicaa') {
+      url = recurAnnual ? 'https://buy.stripe.com/6oE00WgZQaK2g00cMU' : 'https://buy.stripe.com/eVacNIbFwaK2aFG7sw';
+    }
 
     // const handleDesignationChange = (event) => {
     //   setDonationDesignation(event.target.value);
@@ -95,7 +114,7 @@ return (
 
 
   <Container size="xl" my="lg">
-    <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="xl">
+    <SimpleGrid cols={{ base: 0.5, sm: 2 }} spacing="xl">
 
       <Skeleton visible={false} height={PRIMARY_COL_HEIGHT} radius="md" animate={false}>
       
@@ -108,13 +127,15 @@ return (
  </p>
       <br></br>
 
-
+{/* 
       <Grid>
-        <Grid.Col span={12}>
+        <Grid.Col span={12}> */}
         <Text>To donate, choose a tier:</Text>
 
 
         <Radio.Group
+      value={value}
+      onChange={setValue}
       name="favoriteFramework"
       color="yellow"
       // label="Choose a donation tier."
@@ -132,7 +153,7 @@ return (
       
       <br></br>
       <Text>Or, choose a donation amount:</Text>
-      <Text fz="xs" color="grey">Donations above $50 are automatically added to the Nausicaa tier.</Text>
+      <Text fz="xs" color="grey">Donations above $50 are automatically added to their respective tier.</Text>
 
       <Group mt="xs" gap="lg">
         <Radio value="20" label="$20" />
@@ -146,12 +167,17 @@ return (
       </Group>
       
     </Radio.Group>
-
+    <br></br>
+    <Checkbox 
+      checked={recurAnnual}
+      onChange={handleCheckboxChange}
+      label="Make my donation annual"></Checkbox>
+{/* 
         </Grid.Col>
 
 
 
-      </Grid>
+      </Grid> */}
 
 
       
@@ -212,10 +238,9 @@ return (
       <br></br>
 
       
-      <strong>Note about the MERCH PACKAGES:</strong> The Athena, Penelope, and Circe tiers each contain a Merch Package. T
-      he Merch Package consists of the <a href="https://theharvardadvocate.com/current" style={{textDecoration: 'underline', color: 'blue'}}>current issue</a>, 
-      <a href="https://shop.theharvardadvocate.com/products/unisex-hoodie-march-1968?variant=40148551598135" style={{textDecoration: 'underline', color: 'blue'}}>
-        a sweater</a>, <a href="https://shop.theharvardadvocate.com/products/peg-logo-sticker" style={{textDecoration: 'underline', color: 'blue'}}>a hand-designed 
+      <strong>Note about the MERCH PACKAGES:</strong> The Athena, Penelope, and Circe tiers each contain a Merch Package. The Merch Package consists of the <a href="https://theharvardadvocate.com/current" style={{textDecoration: 'underline', color: 'blue'}}>current issue</a>, 
+       &nbsp;<a href="https://shop.theharvardadvocate.com/products/unisex-hoodie-march-1968?variant=40148551598135" style={{textDecoration: 'underline', color: 'blue'}}>
+        a sweater</a>,&nbsp; <a href="https://shop.theharvardadvocate.com/products/peg-logo-sticker" style={{textDecoration: 'underline', color: 'blue'}}>a hand-designed 
         sticker</a>, and <a href="https://shop.theharvardadvocate.com/products/1866-corduroy-cap-embroidered?variant=40135284031543" style={{textDecoration: 'underline', color: 'blue'}}>a hat</a>.
       {/* <p> */}
       &nbsp;Donations of every tier will come with your name printed in the next issue and The Advocate's eternal gratutude.
