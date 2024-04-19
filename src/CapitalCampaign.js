@@ -8,12 +8,15 @@ import athena from './assets/athena.PNG';
 
 import React, { useState } from 'react';
 import { TextInput } from '@mantine/core';
-import { Grid, Skeleton, Button, Checkbox, Group, Container, Text, Image, Space, RadioGroup, Radio, SimpleGrid, rem } from '@mantine/core';
+import { Grid, Skeleton, Button, Checkbox, Group, Container, Title, Text, Image, Space, RadioGroup, Radio, SimpleGrid, rem } from '@mantine/core';
 
+import { useIsMobile } from "./isMobile.js";
 
 const PRIMARY_COL_HEIGHT = rem(680);
 
 function CapitalCampaign() {
+
+  
 
 
   const [value, setValue] = useState('react');
@@ -27,6 +30,12 @@ function CapitalCampaign() {
   const [clickedOther, setClickedOther] = useState(false);
   const [recurAnnual, setRecurAnnual] = useState(false);
 
+  const isMobile = useIsMobile();
+
+  const mar = 0.6;
+  const mar2 = 0.3;
+
+
   // const [donationDesignation, setDonationDesignation] = useState('');
 
   const handleDonation = (amount) => {
@@ -36,6 +45,9 @@ function CapitalCampaign() {
     setClicked100(false);
     setClicked250(false);
     setClicked500(false);
+
+
+    
 
     // Set the clicked button state
     switch (amount) {
@@ -113,19 +125,41 @@ const SECONDARY_COL_HEIGHT = `calc(${PRIMARY_COL_HEIGHT} / 4 - var(--mantine-spa
 return (
 
 
-  <Container size="xl" my="lg">
-    <SimpleGrid cols={{ base: 0.5, sm: 2 }} spacing="xl">
+  // <Container size="xl" my="lg">
+  //   <SimpleGrid cols={{ base: 0.5, sm: 2 }} spacing="xl">
 
-      <Skeleton visible={false} height={PRIMARY_COL_HEIGHT} radius="md" animate={false}>
+<div>
+  <Grid>
+
+    <Grid.Col span={isMobile ? mar : mar}></Grid.Col>
+
+    <Grid.Col span={isMobile ? 12 - mar * 2 : 6 - mar - mar2}>
+
+
+      {/* <Skeleton visible={false} height={PRIMARY_COL_HEIGHT} radius="md" animate={false}> */}
+
+      {/* <Title fz="lg">Donate to the Capital Campaign</Title> */}
+
+
+      {isMobile ? <div><Space h={20}></Space><Text fz="sm">      <h2>Donate to the Capital Campaign</h2></Text></div> : <Text fz="sm">      <h1>Donate to the Capital Campaign</h1></Text>
       
-      <h1>Donate to the Capital Campaign</h1>
+      
+      }
+
+      <Text fz="sm">
+
+
+      
+      
         <p>Each semester, The Harvard Advocate raises just enough advertising revenue to cover regular operations, but print advertising is a dying art form. With your support, The Harvard Advocate will be able to continue printing and distributing our semesterly magazine; digitize and archive our 150+ years of back issues; implement essential building upkeep and renovations; fund our financial aid program; and enable the continued vitality of the student organization you know and love.
 <br></br> <br></br>As an alum, you can donate to specific funds in order to guarantee that your money will go to a cause close to your heart (who doesn’t adore the kitchen floor?!).
-<br></br>Thank you, as always, for your generous and unfailing support.
+Thank you, as always, for your generous and unfailing support.
 <br></br><br></br>Dulce Est Periculum
 
  </p>
       <br></br>
+
+      </Text>
 
 {/* 
       <Grid>
@@ -172,55 +206,18 @@ return (
       checked={recurAnnual}
       onChange={handleCheckboxChange}
       label="Make my donation annual"></Checkbox>
-{/* 
-        </Grid.Col>
 
-
-
-      </Grid> */}
-
-
-      
-{/*   
-      
-
-      <Grid gutter>
-        <Grid.Col span={2}> 
-        <Button fullWidth={true} variant={clicked20 ? "filled" : "default"} onClick={() => handleDonation(20)}>20</Button>
-
-        
-        </Grid.Col>
-        <Grid.Col span={2}> 
-        <Button  fullWidth={true} variant={clicked50 ? "filled" : "default"} onClick={() => handleDonation(50)}>50</Button>
-
-        
-        </Grid.Col>
-        <Grid.Col span={2}> 
-        <Button  fullWidth={true} variant={clicked100 ? "filled" : "default"} onClick={() => handleDonation(100)}>100</Button>
-
-        
-        </Grid.Col>
-        <Grid.Col span={2}> 
-        <Button  fullWidth={true} variant={clicked250 ? "filled" : "default"} onClick={() => handleDonation(250)}>250</Button>
-
-        
-        </Grid.Col>
-        <Grid.Col span={2}> 
-        <Button  fullWidth={true} variant={clicked500 ? "filled" : "default"} onClick={() => handleDonation(500)}>500</Button>
-
-        
-        </Grid.Col>
-        <Grid.Col span={2}> 
-        <Button  fullWidth={true} variant={clickedOther ? "filled" : "default"} onClick={() => handleDonation(0)}>Other</Button>
-
-        
-        </Grid.Col>
-      </Grid> */}
 
 
     <br></br>
 
   <Button fullWidth={true} onClick={handleDonateNow}>Donate Now</Button>
+
+  {isMobile ? <div> </div> : 
+
+    <div>
+
+      <Text fz="sm">
 
       <br></br>
       <h2>Your donation will help The Harvard Advocate:</h2>
@@ -244,15 +241,19 @@ return (
         sticker</a>, and <a href="https://shop.theharvardadvocate.com/products/1866-corduroy-cap-embroidered?variant=40135284031543" style={{textDecoration: 'underline', color: 'blue'}}>a hat</a>.
       {/* <p> */}
       &nbsp;Donations of every tier will come with your name printed in the next issue and The Advocate's eternal gratutude.
-      {/* </p> */}
-{/* 
-        <Group 
-        // justify="space-between" 
-        gap="sm"> */}
+      </Text>
+</div>
+
+    }
 
 
+     </Grid.Col>
+     {isMobile ? <Space h={500}></Space> : ""}
 
-     </Skeleton>
+<Grid.Col span={isMobile ? mar : mar2 * 2}></Grid.Col>
+<Grid.Col span={isMobile ? mar : 0}></Grid.Col>
+
+<Grid.Col span={isMobile ? 12 - 2 * mar : 6 - mar - mar2}>
 
         <Grid gutter="md">
 
@@ -269,7 +270,7 @@ return (
           <Grid.Col span={8.5}>
             
           <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
-          <Text align="right" justify="right">
+          <Text fz={isMobile ? "xs" : "sm"} align="right" justify="right">
                 <h3>Athena ($10,000+)</h3>
                   <li>Name engraved on plaque in building</li>
                   <li>150th Anniversary Poster signed by all 2023-24 Advocate members</li>
@@ -358,105 +359,70 @@ return (
             </Grid.Col>
             
         </Grid>
-      </SimpleGrid>
-    </Container>
 
-//     <div>
-
-//     <Grid mt={20}>
-//     <Grid.Col span={1} style={{ minHeight: 30 }}></Grid.Col>
-//     <Grid.Col span={10} style={{ minHeight: 30}}>
-
-//     <h2>Capital Campaign</h2>
+    </Grid.Col>
 
 
-//     </Grid.Col>
-//     <Grid.Col span={1} style={{ minHeight: 30 }}></Grid.Col>
+    <Grid.Col span={mar}></Grid.Col>
+
+    <Grid.Col span={isMobile ? mar : 0}></Grid.Col>
+    <Grid.Col span={isMobile ? 12 - 2* mar : 0}>
+
+    {!isMobile ? <div> </div> : 
 
 
-//     </Grid>
-
-//     {/*  */}
-//     <Grid>
 
 
-    
-
-//     <Grid.Col span={1} style={{ minHeight: 200 }}></Grid.Col>
-
-//     <Grid.Col span={4} style={{ minHeight: 200 }}>
-
-//         <h2>Or make a one-time contribution!</h2>
 
 
-//         <br></br>
-
-//         <Group justify="space-between" gap="sm">
-
-//     <Button variant="default" >20</Button>
-//       <Button variant="default">50</Button>
-//       <Button variant="default">100</Button>
-
-//     <Button variant="default">250</Button>
-//       <Button variant="default">500</Button>
-//       {/* <Button variant="default">1000</Button> */}
-//       <Button variant="default">Other</Button>
-//     </Group>
-//     <br></br>
-
-//     <Button width="100%" maw="100%">Go to Stripe</Button>
-
-//     </Grid.Col>
-//     <Grid.Col span={1} style={{ minHeight: 200 }}></Grid.Col>
-
-//     <Grid.Col span={5} style={{ minHeight: 200, textAlign: "left"}}>
-
-//       <h2>Welcome!</h2>
-
-//       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis nisl id lorem cursus commodo. Pellentesque sed elementum enim, nec elementum sem. Fusce fermentum consequat nunc a imperdiet. Curabitur eu mattis magna. Vestibulum finibus eget urna id ullamcorper.
-
-//     </Grid.Col>
-
-//     <Grid.Col span={1} style={{ minHeight: 200 }}></Grid.Col>
+<div>
+<Text fz="sm">
 
 
-//     <Grid.Col span={6}></Grid.Col>
-//     <Grid.Col span={5}>Midas Tier</Grid.Col>
-//     <Grid.Col span={1}></Grid.Col>
+
+  <br></br>
+  <h2>Your donation will help us:</h2>
+  <li> Install swipe access to 21 South Street</li> 
+  <li> Retile our kitchen</li>
+  <li> Print our issues and distribute them</li> 
+<li> Digitize back issues + move to offsite storage</li> 
+<li> Hire a regular cleaning crew</li> 
+<li> Hold events in 21 South Street</li> 
+<li>  Start a Financial Aid program and Increase accessibility to the Advocate</li> 
+<li> Fund board bonding events</li> 
+<li> Fund the blog (literary + arts events in Boston, concert tickets, etc.)</li> 
 
 
-//   </Grid>
+  <br></br>
+
+  
+  <strong>Note about the MERCH PACKAGES:</strong> The Athena, Penelope, and Circe tiers each contain a Merch Package. The Merch Package consists of the <a href="https://theharvardadvocate.com/current" style={{textDecoration: 'underline', color: 'blue'}}>current issue</a>, 
+  &nbsp;<a href="https://shop.theharvardadvocate.com/products/unisex-hoodie-march-1968?variant=40148551598135" style={{textDecoration: 'underline', color: 'blue'}}>
+    a sweater</a>,&nbsp; <a href="https://shop.theharvardadvocate.com/products/peg-logo-sticker" style={{textDecoration: 'underline', color: 'blue'}}>a hand-designed 
+    sticker</a>, and <a href="https://shop.theharvardadvocate.com/products/1866-corduroy-cap-embroidered?variant=40135284031543" style={{textDecoration: 'underline', color: 'blue'}}>a hat</a>.
+  {/* <p> */}
+  &nbsp;Donations of every tier will come with your name printed in the next issue and The Advocate's eternal gratutude.
+
+  </Text>
+</div>
 
 
-//   </div>
 
-  //   <Container my="lg">
-  //   <Grid>
-  //     <Grid.Col color={"red"} span={{ base: 12, xs: 4 }}>{child}</Grid.Col>
-  //     <Grid.Col span={{ base: 12, xs: 8 }}>{child}</Grid.Col>
-  //     <Grid.Col span={{ base: 12, xs: 8 }}>{child}</Grid.Col>
-  //     <Grid.Col span={{ base: 12, xs: 4 }}>{child}</Grid.Col>
-  //     <Grid.Col span={{ base: 12, xs: 3 }}>{child}</Grid.Col>
-  //     <Grid.Col span={{ base: 12, xs: 3 }}>{child}</Grid.Col>
-  //     <Grid.Col span={{ base: 12, xs: 6 }}>{child}</Grid.Col>
-  //   </Grid>
-  // </Container>
+}
 
-    //   <Frame
-    //     text={
-    //       <>
-    //       <h2>Dear Departed Advocates,</h2>
-    //       <p>Welcome to the official website of the Harvard Advocate alumni community! Here, you can connect with your fellow alumni and stay up to date with the latest Advocate news and developments.</p>
-    //       <p>Please note that this website is distinct from the <a href="https://www.theharvardadvocate.com">Harvard Advocate magazine website</a>. Our site is dedicated specifically to alumni matters and providing a platform for alumni to connect with each other.</p>
-    //       <p>While you're here, check out the alumni-only shop from the navbar for some Advocate themed merch</p>
-    //       <p>If you have any questions or feedback, please contact us via the contact page. We look forward to hearing from you soon!</p>
-    //       <p>Best regards,<br/>Hades</p>
-    //       </>
-    //     }
 
-    //     illustration={illustration}
-    //     illustrationCaption="Illustration by Tosca Langbert '24"
-    //   />
+
+    </Grid.Col>
+
+    <Grid.Col span={isMobile ? 0 : 0}></Grid.Col>
+
+        </Grid>
+
+        </div>
+
+
+
+
   );
 }
 
