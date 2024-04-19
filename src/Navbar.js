@@ -43,9 +43,9 @@ function Navbar() {
               {/* <li className="nav-item">
                 <a className="nav-link" href="/capital-campaign-old">Capital Campaign Old</a>
               </li> */}
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <a className="nav-link" href="/annual-appeal">Annual Appeal</a>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <a className="nav-link" href="https://the-harvard-advocate.myshopify.com/">Alumni Store</a>
               </li>
@@ -64,9 +64,9 @@ function Navbar() {
           <li className="nav-item">
             <a className="nav-link" href="/capital-campaign">Capital Campaign</a>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a className="nav-link" href="/annual-appeal">Annual Appeal</a>
-          </li>
+          </li> */}
           <li className="nav-item">
             <a className="nav-link" href="https://the-harvard-advocate.myshopify.com/">Alumni Store</a>
           </li>
