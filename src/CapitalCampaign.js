@@ -293,7 +293,7 @@ Thank you, as always, for your generous and unfailing support.
           <Grid.Col span={8.5}>
             
             <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
-                <Text align="right" justify="right">
+                <Text fz={isMobile ? "xs" : "sm"} align="right" justify="right">
                 <h3>Penelope ($5,000+)</h3>
                 <li>150th Anniversary Poster signed by all 2023-24 Advocate members</li>
                   <li>Up to 3 back issues or posters</li>
@@ -317,7 +317,7 @@ Thank you, as always, for your generous and unfailing support.
           <Grid.Col span={8.5}>
 
           <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
-          <Text align="right" justify="right">
+          <Text fz={isMobile ? "xs" : "sm"} align="right" justify="right">
                 <h3>Circe ($1,000 - $5,000)</h3>
                   <li>Up to 3 back issues or posters</li>
                   <li>Handwritten thank-you note</li>
@@ -350,7 +350,7 @@ Thank you, as always, for your generous and unfailing support.
           <Grid.Col span={8.5}>
 
           <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
-          <Text align="right" justify="right">
+          <Text fz={isMobile ? "xs" : "sm"} align="right" justify="right">
                 <h3>Nausicaa ($50 - $1,000)</h3>
                 <li><a href="https://shop.theharvardadvocate.com/products/peg-logo-sticker" style={{textDecoration: 'underline', color: 'blue'}}>A hand-designed sticker </a></li>
                 <li>The current issue</li>
