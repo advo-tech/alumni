@@ -38,41 +38,41 @@ function CapitalCampaign() {
 
   // const [donationDesignation, setDonationDesignation] = useState('');
 
-  const handleDonation = (amount) => {
-    setClickedOther(false);
-    setClicked20(false);
-    setClicked50(false);
-    setClicked100(false);
-    setClicked250(false);
-    setClicked500(false);
+  // const handleDonation = (amount) => {
+  //   setClickedOther(false);
+  //   setClicked20(false);
+  //   setClicked50(false);
+  //   setClicked100(false);
+  //   setClicked250(false);
+  //   setClicked500(false);
 
 
     
 
-    // Set the clicked button state
-    switch (amount) {
-      case 0:
-        setClickedOther(true);
-        break;
-      case 20:
-        setClicked20(true);
-        break;
-      case 50:
-        setClicked50(true);
-        break;
-      case 100:
-        setClicked100(true);
-        break;
-      case 250:
-        setClicked250(true);
-        break;
-      case 500:
-        setClicked500(true);
-        break;
-      default:
-        break;
-    }
-  };
+  //   // Set the clicked button state
+  //   switch (amount) {
+  //     case 0:
+  //       setClickedOther(true);
+  //       break;
+  //     case 20:
+  //       setClicked20(true);
+  //       break;
+  //     case 50:
+  //       setClicked50(true);
+  //       break;
+  //     case 100:
+  //       setClicked100(true);
+  //       break;
+  //     case 250:
+  //       setClicked250(true);
+  //       break;
+  //     case 500:
+  //       setClicked500(true);
+  //       break;
+  //     default:
+  //       break;
+  //   }
+  // };
 
   const handleCheckboxChange = () => {
     setRecurAnnual(!recurAnnual);
@@ -98,16 +98,16 @@ function CapitalCampaign() {
       url = recurAnnual ? 'https://buy.stripe.com/7sI5lgaBsg4maFG6oy' : 'https://buy.stripe.com/7sIdRM8tk19saFGbIP';
     } 
     else if (value == 'athena') {
-      url = recurAnnual ? 'https://buy.stripe.com/cN2eVQ7pg9FY7tu14j' : 'https://buy.stripe.com/cN2eVQ7pg9FY7tu14j';
+      url = recurAnnual ? 'https://buy.stripe.com/00gfZUgZQ8BU7tu9AR' : 'https://buy.stripe.com/cN2eVQ7pg9FY7tu14j';
     }
     else if (value == 'penelope') {
-      url = recurAnnual ? 'https://buy.stripe.com/cN2bJE5h819s6pqdQS' : 'https://buy.stripe.com/cN2bJE5h819s6pqdQS';
+      url = recurAnnual ? 'https://buy.stripe.com/9AQ8xsdNE9FYg006oG' : 'https://buy.stripe.com/cN2bJE5h819s6pqdQS';
     }
     else if (value == 'circe') {
-      url = recurAnnual ? 'https://buy.stripe.com/6oE00WbFw7xQ8xy7sG' : 'https://buy.stripe.com/6oE00WbFw7xQ8xy7sG';
+      url = recurAnnual ? 'https://buy.stripe.com/4gw6pkgZQ5pI8xyaEX' : 'https://buy.stripe.com/6oE00WbFw7xQ8xy7sG';
     }
     else if (value == 'nausicaa') {
-      url = recurAnnual ? 'https://buy.stripe.com/6oE00WgZQaK2g00cMU' : 'https://buy.stripe.com/eVacNIbFwaK2aFG7sw';
+      url = recurAnnual ? 'https://buy.stripe.com/3cs00WfVM5pI6pqbJ2' : 'https://buy.stripe.com/eVacNIbFwaK2aFG7sw';
     }
 
     // const handleDesignationChange = (event) => {
@@ -152,9 +152,9 @@ return (
       
       
         <p>Each semester, The Harvard Advocate raises just enough advertising revenue to cover regular operations, but print advertising is a dying art form. With your support, The Harvard Advocate will be able to continue printing and distributing our semesterly magazine; digitize and archive our 150+ years of back issues; implement essential building upkeep and renovations; fund our financial aid program; and enable the continued vitality of the student organization you know and love.
-<br></br> <br></br>As an alum, you can donate to specific funds in order to guarantee that your money will go to a cause close to your heart (who doesn’t adore the kitchen floor?!).
+<br></br> <br></br>As an alum, you can donate to specific funds in order to guarantee that your money will go to a cause close to your heart
 Thank you, as always, for your generous and unfailing support.
-<br></br><br></br>Dulce Est Periculum
+<br></br><br></br><i>Dulce Est Periculum</i>
 
  </p>
       <br></br>
@@ -222,14 +222,17 @@ Thank you, as always, for your generous and unfailing support.
       <br></br>
       <h2>Your donation will help The Harvard Advocate:</h2>
       <li> Install swipe access to 21 South Street</li> 
-      <li> Retile our kitchen</li>
-      <li> Print our issues and distribute them</li> 
-     <li> Digitize back issues + move to offsite storage</li> 
-     <li> Hire a regular cleaning crew</li> 
-     <li> Hold events in 21 South Street</li> 
-     <li>  Start a Financial Aid program and Increase accessibility to the Advocate</li> 
-     <li> Fund board bonding events</li> 
-     <li> Fund the blog (literary + arts events in Boston, concert tickets, etc.)</li> 
+      <li>Print and distribute the magazine</li>
+      <li>Digitize 150+ years of back issues and archive them in acid-free boxes</li>
+      <li>Fund our financial aid program</li>
+      <li>Hire a regular cleaning crew</li>
+      <li>Retile our kitchen and bathroom</li>
+      <li>Install swipe access at 21 South Street</li>
+      <li>Host events at 21 South Street</li>
+      <li>Fund bonding events for boards of The Advocate</li>
+      <tab></tab>&nbsp; &nbsp; (Features, Fiction, Poetry, Art, Design, Tech, Business)
+      <li>Fund our blog (Backstage passes to literary and arts events in Boston, concert tickets, etc.)</li>
+
 
 
       <br></br>
@@ -381,16 +384,17 @@ Thank you, as always, for your generous and unfailing support.
 
 
   <br></br>
-  <h2>Your donation will help us:</h2>
-  <li> Install swipe access to 21 South Street</li> 
-  <li> Retile our kitchen</li>
-  <li> Print our issues and distribute them</li> 
-<li> Digitize back issues + move to offsite storage</li> 
-<li> Hire a regular cleaning crew</li> 
-<li> Hold events in 21 South Street</li> 
-<li>  Start a Financial Aid program and Increase accessibility to the Advocate</li> 
-<li> Fund board bonding events</li> 
-<li> Fund the blog (literary + arts events in Boston, concert tickets, etc.)</li> 
+  <h2>Your donation will help The Harvard Advocate:</h2>
+      <li> Install swipe access to 21 South Street</li> 
+      <li>Print and distribute the magazine</li>
+      <li>Digitize 150+ years of back issues and archive them in acid-free boxes</li>
+      <li>Fund our financial aid program</li>
+      <li>Hire a regular cleaning crew</li>
+      <li>Retile our kitchen and bathroom</li>
+      <li>Install swipe access at 21 South Street</li>
+      <li>Host events at 21 South Street</li>
+      <li>Fund bonding events for boards of The Advocate (Features, Fiction, Poetry, Art, Design, Tech, Business)</li>
+      <li>Fund our blog (Backstage passes to literary and arts events in Boston, concert tickets, etc.)</li>
 
 
   <br></br>
