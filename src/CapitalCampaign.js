@@ -263,14 +263,14 @@ Thank you, as always, for your generous and unfailing support.
           {/* ATHENA */}
 
 
-          <Grid.Col span={3.5}>
+          <Grid.Col span={4}>
   <img
     src={athena}
     alt="athena tier illustration: sketch of bronco"
     style={{ width: '100%', borderRadius: 'md' }} 
   />
 </Grid.Col>
-          <Grid.Col span={8.5}>
+          <Grid.Col span={8}>
             
           <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
           <Text fz={isMobile ? "xs" : "sm"} align="right" justify="right">
@@ -286,14 +286,14 @@ Thank you, as always, for your generous and unfailing support.
 
           {/* PENELOPE */}
 
-          <Grid.Col span={3.5}>
+          <Grid.Col span={4}>
             <img
               src={penelope} 
               alt="penelope tier illustration: sketch of bronco"
               style={{ width: '100%', borderRadius: 'md' }} 
             />
           </Grid.Col>
-          <Grid.Col span={8.5}>
+          <Grid.Col span={8}>
             
             <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
                 <Text fz={isMobile ? "xs" : "sm"} align="right" justify="right">
@@ -309,7 +309,7 @@ Thank you, as always, for your generous and unfailing support.
 
 
      {/* CIRCE */}
-     <Grid.Col span={3.5}>
+     <Grid.Col span={4}>
             <img
               src={circe} 
               alt="circe tier illustration: sketch of bronco"
@@ -317,7 +317,7 @@ Thank you, as always, for your generous and unfailing support.
             />
           </Grid.Col>
 
-          <Grid.Col span={8.5}>
+          <Grid.Col span={8}>
 
           <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
           <Text fz={isMobile ? "xs" : "sm"} align="right" justify="right">
@@ -334,7 +334,7 @@ Thank you, as always, for your generous and unfailing support.
 
 
 
-     <Grid.Col span={3.5} style={{ position: 'relative' }}>
+     <Grid.Col span={4} style={{ position: 'relative' }}>
   <img
     src={nausicaa} 
     alt="nausicaa tier illustration: sketch of bronco"
@@ -350,7 +350,7 @@ Thank you, as always, for your generous and unfailing support.
   </div>
 </Grid.Col>
 
-          <Grid.Col span={8.5}>
+          <Grid.Col span={8}>
 
           <Skeleton visible={false} height={SECONDARY_COL_HEIGHT} radius="md" animate={false}>
           <Text fz={isMobile ? "xs" : "sm"} align="right" justify="right">
