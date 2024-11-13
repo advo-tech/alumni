@@ -6,6 +6,7 @@ import '@mantine/core/styles.css';
 import Home from "./Home";
 import CapitalCampaignOld from "./CapitalCampaignOld";
 import CapitalCampaign from "./CapitalCampaign";
+import TrackerCampaign from "./TrackerCampaign";
 import AnnualAppeal from "./AnnualAppeal";
 import Navbar from './Navbar';
 import Contact from './Contact';
@@ -27,6 +28,9 @@ function App() {
         <Switch>
           <Route path="/contact">
             <Contact />
+          </Route>
+          <Route path="/aid-campaign">
+            <TrackerCampaign />
           </Route>
           <Route path="/capital-campaign">
             <CapitalCampaign />

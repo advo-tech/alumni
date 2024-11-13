@@ -38,6 +38,9 @@ function Navbar() {
           <div className={`navbar-collapse${showMenu ? "-show" : ""}`}>
             <ul className={`navbar-nav${showMenu ? "-show" : ""}`}>
             <li className="nav-item">
+                <a className="nav-link" href="/aid-campaign">Aid Campaign</a>
+              </li>
+            <li className="nav-item">
                 <a className="nav-link" href="/capital-campaign">Capital Campaign</a>
               </li>
               {/* <li className="nav-item">
