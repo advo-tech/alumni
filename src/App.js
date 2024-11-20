@@ -33,7 +33,8 @@ function App() {
             <TrackerCampaign />
           </Route>
           <Route path="/capital-campaign">
-            <CapitalCampaign />
+          <TrackerCampaign />
+            {/* <CapitalCampaign /> */}
           </Route>         
           <Route path="/capital-campaign-old">
             <CapitalCampaignOld />
