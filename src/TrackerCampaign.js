@@ -161,9 +161,9 @@ return (
 
         <Paper shadow="xs" p="xl" withBorder  >
   <h3 align="center">Progress</h3>
-       <Progress color="yellow" size="xl" value={(data["available"][0]["amount"] + data["pending"][0]["amount"]) / 4000} />
+       <Progress color="yellow" size="xl" value={(data["available"][0]["amount"] + data["pending"][0]["amount"] + 1946) / 4000} />
        <br></br>
-       <Text>We have raised ${(data["available"][0]["amount"] + data["pending"][0]["amount"]) / 100} of $4,000. <Anchor href="https://donate.stripe.com/6oE00W6lc7xQeVW144" target="_blank" color="red" underline="always">Donate today!</Anchor></Text>
+       <Text>We have raised ${(data["available"][0]["amount"] + data["pending"][0]["amount"] + 1946) / 100} of $4,000. <Anchor href="https://donate.stripe.com/6oE00W6lc7xQeVW144" target="_blank" color="red" underline="always">Donate today!</Anchor></Text>
 
        </Paper>
        <br></br>
